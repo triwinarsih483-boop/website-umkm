@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Proses seduh manual</title>
+  <desc id="desc">Ilustrasi teko menuang air ke dripper kopi.</desc>
+  <rect width="640" height="360" fill="#e0f2fe" />
+  <path d="M140 110h170v90H140z" fill="#94a3b8" />
+  <path d="M310 135c90 0 80 80 140 80" fill="none" stroke="#64748b" stroke-width="24" stroke-linecap="round" />
+  <path d="M430 205c-35 35-40 70-40 95" fill="none" stroke="#38bdf8" stroke-width="8" stroke-linecap="round" />
+  <path d="M350 220h150l-35 75h-80z" fill="#6f3b1f" />
+  <rect x="365" y="295" width="120" height="28" rx="8" fill="#8d5a3b" />
+</svg>

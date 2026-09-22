@@ -7,6 +7,7 @@ body {
 
 .page {
   max-width: 920px;
+  min-height: calc(100vh - 180px);
   margin: 0 auto;
   padding: 32px 20px;
 }
@@ -79,3 +80,11 @@ button:focus-visible { outline: 3px solid #2563eb; outline-offset: 3px; }
 .price {
   font-weight: 700;
 }
+
+img { max-width: 100%; height: auto; }
+figure { margin: 0 0 24px; }
+figcaption { margin-top: 8px; color: #6b5b52; }
+table { width: 100%; border-collapse: collapse; }
+caption { margin-bottom: 8px; font-weight: 700; text-align: left; }
+th,
+td { padding: 10px; text-align: left; border: 1px solid #dccbbc; }
