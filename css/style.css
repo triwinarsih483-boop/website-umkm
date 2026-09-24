@@ -88,3 +88,80 @@ table { width: 100%; border-collapse: collapse; }
 caption { margin-bottom: 8px; font-weight: 700; text-align: left; }
 th,
 td { padding: 10px; text-align: left; border: 1px solid #dccbbc; }
+/* FORM KONTAK */
+#form-kontak {
+  background: white;
+  padding: 20px;
+  border: 2px solid #ead8c4;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.field {
+  margin-bottom: 12px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+#form-kontak input[type="text"],
+#form-kontak input[type="email"],
+#form-kontak input[type="tel"],
+#form-kontak select,
+#form-kontak textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #777;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+#form-kontak input:focus,
+#form-kontak select:focus,
+#form-kontak textarea:focus {
+  outline: 2px solid #8b451f;
+}
+
+fieldset {
+  margin: 0 0 16px;
+  padding: 8px 12px;
+  border: 2px solid #ead8c4;
+  border-radius: 10px;
+}
+
+legend {
+  padding: 0 4px;
+  font-weight: bold;
+}
+
+fieldset label {
+  display: block;
+  margin: 5px 0;
+}
+
+#form-kontak button[type="submit"] {
+  background: #7b3f1f;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#form-kontak button[type="submit"]:hover {
+  background: #5f2f17;
+}
+
+#preview-form {
+  padding: 16px;
+  margin-top: 12px;
+  white-space: pre-wrap;
+  background: white;
+  border: 2px solid #ead8c4;
+  border-radius: 12px;
+}
