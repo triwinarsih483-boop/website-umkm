@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Produk Kopi Nusa - Website UMKM</title>
     <link rel="stylesheet" href="css/style.css" />
+
+    <script src="js/app.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#konten">Lewati ke konten utama</a>
@@ -60,14 +62,48 @@
     <article class="product-card">
       <span class="product-badge">Hemat</span>
       <h3>Paket Seduh Rumahan</h3>
-      <p>Kopi 250 gram, filter, dan panduan seduh untuk pemula.</p>
+      <p>Kopi 500 gram, filter, dan panduan seduh untuk pemula.</p>
       <p class="price">Rp75.000</p>
       <div class="card-actions">
         <a class="button" href="kontak.html">Tanya produk</a>
         <a href="#harga-title">Lihat tabel harga</a>
       </div>
+      </article>
+
+      <article class="product-card">
+      <span class="product-badge">stok terbatas</span>
+      <h3>Kopi Gayo Arabika</h3>
+      <p>Arabika Gayo dengan aroma harum dan rasa kompleks.</p>
+      <p class="price">Rp25.000</p>
+      <div class="card-actions">
+        <a class="button" href="kontak.html">Tanya produk</a>
+        <a href="#harga-title">Lihat tabel harga</a>
+      </div>
+      </article>
+
+       <article class="product-card">
+      <span class="product-badge">stok terbatas</span>
+      <h3>Hazelnut latte</h3>
+      <p>Espresso dengan susu creamy dan aroma hazelnut yang khas,
+         bercita rasa lembut dan manis.</p>
+      <p class="price">Rp20.000</p>
+      <div class="card-actions">
+        <a class="button" href="kontak.html">Tanya produk</a>
+        <a href="#harga-title">Lihat tabel harga</a>
+      </div>
+      </article>
+
     </article>
   </div>
+</section>
+
+<section class="section" aria-labelledby="produk-dinamis-title">
+  <div class="section-header">
+    <p class="eyebrow">Pilihan Kopi Nusa</p>
+    <h2 id="produk-dinamis-title">Produk dari Data Lokal</h2>
+    <p id="produk-ringkasan">Data produk akan dimuat melalui JavaScript.</p>
+  </div>
+  <div id="produk-dinamis" class="js-product-grid"></div>
 </section>
 
     <section aria-labelledby="harga-title">
@@ -107,6 +143,13 @@
       <td>250 gram</td>
       <td>Rp25.000</td>
     </tr>
+
+    <tr>
+      <th scope="row">Paket Seduh Rumahan</th>
+      <td>500 gram</td>
+      <td>Rp75.000</td>
+    </tr>
+
   </tbody>
 </table>
 </div>
