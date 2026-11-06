@@ -539,3 +539,7 @@ fieldset {
   font-weight: 700;
 }
 
+#produk-unggulan {
+  font-weight: 700;
+  color: var(--color-primary, #6f3b1f);
+}
