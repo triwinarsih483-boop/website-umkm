@@ -10,6 +10,7 @@ const produkUmkm = [
     harga: 45000,
     stok: 12,
     unggulan: true,
+    diskonPersen:10,
   },
   {
     nama: "Cold Brew Aren",
@@ -49,6 +50,33 @@ function formatRupiah(nilai) {
   }).format(nilai);
 }
 
+function hitungHargaPromo(produk) {
+  if (typeof produk.diskonPersen !== "number") {
+    return produk.harga;
+  }
+
+  return Math.round(
+    produk.harga - (produk.harga * produk.diskonPersen / 100)
+  );
+}
+
+function ringkasanKategori(daftarProduk) {
+  const jumlahKategori = {};
+
+  daftarProduk.forEach((produk) => {
+    if (!jumlahKategori[produk.kategori]) {
+      jumlahKategori[produk.kategori] = 0;
+    }
+
+    jumlahKategori[produk.kategori]++;
+  });
+
+  return Object.entries(jumlahKategori)
+    .map(([kategori, jumlah]) => `${kategori}: ${jumlah} produk`)
+    .join(", ");
+}
+
+
 function statusStok(stok) {
   if (stok <= 0) {
     return { label: "Habis", className: "warning" };
@@ -61,17 +89,39 @@ function statusStok(stok) {
   return { label: "Tersedia", className: "" };
 }
 
+
 function buatKartuProduk(produk) {
   const status = statusStok(produk.stok);
+  const punyaDiskon =
+    typeof produk.diskonPersen === "number" &&
+    produk.diskonPersen > 0;
+
+    const tampilanHarga = punyaDiskon ? `
+    <p class="price">
+      <s>${formatRupiah(produk.harga)}</s>
+      <strong>${formatRupiah(hitungHargaPromo(produk))}</strong>
+    </p>
+    <p class="promo-label">Diskon ${produk.diskonPersen}%</p>
+  ` : `
+    <p class="price">
+      ${formatRupiah(produk.harga)}
+    </p>
+    <p class="regular-label">Harga reguler</p>
+  `;
+
+  const labelJenisProduk = punyaDiskon
+  ? "Produk promo"
+  : "Tanpa diskon";
 
   return `
     <article class="js-product-card">
       <h3>${produk.nama}</h3>
-      <p class="category-note">${labelKategori(produk.kategori)}</p>
-      <p class="price">${formatRupiah(produk.harga)}</p>
+      <p class="category-note">${produk.kategori}</p>
+      
+      ${tampilanHarga}
+      <p>${labelJenisProduk}</p>
       <span class="stock-badge ${status.className}">${status.label}</span>
-    </article>
-  `;
+      </article> `;
 }
 
 function labelKategori(kategori) {
@@ -122,5 +172,11 @@ function renderProduk() {
   });
 
   console.table(produkUmkm);
+
+  console.log(
+  "Ringkasan kategori:",
+  ringkasanKategori(produkUmkm)
+  );
+
 }
 document.addEventListener("DOMContentLoaded", renderProduk);
